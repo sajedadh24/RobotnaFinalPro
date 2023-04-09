@@ -1,0 +1,106 @@
+﻿@model RobotnaFinalPro.Models.ViewData.InCoViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!-- Latest Courses -->
+<section id="aa-latest-property">
+    <div class="container">
+        <div class="aa-latest-property-area">
+            <div class="aa-title">
+                <h2>Latest Courses</h2>
+                <span></span>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum sit ea nobis quae vero voluptatibus.</p>
+            </div>
+            <div class="aa-latest-properties-content">
+                <div class="row">
+                    @foreach (var item in Model.Courses)
+                    {
+                        <div class="col-md-4">
+                            <article class="aa-properties-item">
+                                <a href="#" class="aa-properties-item-img">
+                                    <img src="~/img/item/1.jpg" alt="img">
+                                </a>
+                                <div class="aa-tag for-sale">
+                                    @item.Venu.VenuName
+                                </div>
+                                <div class="aa-properties-item-content">
+                                    <div class="aa-properties-info">
+                                        <span>Date:</span>
+                                        <span>@item.StaetDate</span>
+                                        <span>Time:</span>
+                                        <span>@item.StaetTime</span>
+                                    </div>
+                                    <div class="aa-properties-about">
+                                        <h3><a href="#">@item.CourseName</a></h3>
+                                        <p>@item.CourseDesc.Substring(1, 15)</p>
+                                    </div>
+                                    <div class="aa-properties-detial">
+                                        <span class="aa-price">
+                                            @item.Price
+                                        </span>
+                                        <a asp-action="CourseDetails"
+                                           asp-controller="Home"
+                                           asp-route-id="@item.CourseId"
+                                           class="aa-secondary-btn">
+                                            View Details
+                                        </a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    }
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<!-- / Latest Courses -->
+<!-- Our Agent Section-->
+<section id="aa-agents">
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="aa-agents-area">
+                    <div class="aa-title">
+                        <h2>Our Agents</h2>
+                        <span></span>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum sit ea nobis quae vero voluptatibus.</p>
+                    </div>
+                    <!-- agents content -->
+                    <div class="aa-agents-content">
+                        <ul class="aa-agents-slider">
+                            @foreach (var item in Model.instructors) 
+                            {
+                            <li>
+                                <div class="aa-single-agents">
+                                    <div class="aa-agents-img">
+                                        <img src="~/img/agents/agent-1.png" alt="agent member image">
+                                    </div>
+                                    <div class="aa-agetns-info">
+                                        <h4><a href="#">@item.InstructorName</a></h4>
+                                        <span>@item.Position </span>
+                                        <div class="aa-agent-social">
+                                            <a href="#"><i class="fa fa-facebook"></i></a>
+                                            <a href="#"><i class="fa fa-twitter"></i></a>
+                                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                                            <a href="#"><i class="fa fa-google-plus"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            }
+
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<!-- / Our Agent Section-->

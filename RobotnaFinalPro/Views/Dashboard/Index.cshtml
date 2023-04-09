@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Dashboard</h2>
+<div class="card">
+    <div style="padding:5px ; margin:5px">
+        <a style="width:100%" asp-action="Index"
+           asp-controller="Courses" class="btn btn-primary">Courses </a>
+    </div>
+    <div style="padding:5px ; margin:5px">
+        <a style="width:100%" asp-action="Index"
+           asp-controller="Instructors" class="btn btn-primary">Instructors </a>
+    </div>
+    <div style="padding:5px ; margin:5px">
+        <a style="width:100%" asp-action="Index"
+           asp-controller="Roles" class="btn btn-primary">Roles </a>
+    </div>
+    <div style="padding:5px ; margin:5px">
+        <a style="width:100%" asp-action="Index"
+           asp-controller="Users" class="btn btn-primary">Users </a>
+    </div>
+</div>
+
+
